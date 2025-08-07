@@ -2,8 +2,8 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Container, AppBar, Toolbar, Typography } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Table } from "./components/Table";
-import { Detail } from "./components/Detail";
+import Table from "./components/CryptoTable";
+import Detail from "./components/CryptoDetail";
 const theme = createTheme({
   palette: {
     mode: "light",

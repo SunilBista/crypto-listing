@@ -35,7 +35,6 @@ const SearchCoin: React.FC = () => {
       cryptoApi
         .searchCryptocurrencies(query)
         .then((coins) => {
-          console.log("coinsssss", coins);
           setResults(coins.coins);
           setOpen(coins.coins.length > 0);
         })
@@ -58,7 +57,6 @@ const SearchCoin: React.FC = () => {
   const handleClickAway = () => {
     setOpen(false);
   };
-  console.log("resum", results);
   return (
     <Box sx={{ position: "relative", width: "100%", mx: "auto" }}>
       <TextField

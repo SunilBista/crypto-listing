@@ -29,7 +29,6 @@ const CryptoDetail: React.FC = () => {
     setError("");
     try {
       const data = await cryptoApi.getCryptocurrencyDetail(cryptoId);
-      console.log("Detail data", data);
       if (data) {
         setCurrentCryptoData(data);
       } else {

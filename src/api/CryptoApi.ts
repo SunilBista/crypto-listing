@@ -19,7 +19,6 @@ export const cryptoApi = {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Error fetching data:", error);
       throw error;
     }
   },
@@ -37,7 +36,6 @@ export const cryptoApi = {
       const data = await response.json();
       return data[0];
     } catch (error) {
-      console.error("Error fetching data:", error);
       throw error;
     }
   },
@@ -53,7 +51,6 @@ export const cryptoApi = {
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error("Error searching cryptocurrencies:", error);
       throw error;
     }
   },

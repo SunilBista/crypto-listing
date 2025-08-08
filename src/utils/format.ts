@@ -41,7 +41,3 @@ export const formatNumber = (value: number): string => {
     return value.toLocaleString();
   }
 };
-
-export const formatDate = (dateString: string): string => {
-  return new Date(dateString).toLocaleDateString();
-};

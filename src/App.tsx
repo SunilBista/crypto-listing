@@ -21,7 +21,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <AppBar position="static">
+        <AppBar sx={{ width: "100vw" }} position="sticky">
           <Toolbar>
             <Typography
               align="center"

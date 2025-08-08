@@ -6,11 +6,11 @@ export const cryptoApi = {
   async getCryptocurrencies(
     page: number = 1,
     perPage: number = 10,
-    sortBy: string = "market_cap_desc"
+    sortParam: string = "market_cap_desc"
   ): Promise<CryptoTableType[]> {
     try {
       const response = await fetch(
-        `${BASE_URL}/coins/markets?vs_currency=aud&order=${sortBy}&per_page=${perPage}&page=${page}`
+        `${BASE_URL}/coins/markets?vs_currency=aud&order=${sortParam}&per_page=${perPage}&page=${page}`
       );
 
       if (!response.ok) {
@@ -35,9 +35,25 @@ export const cryptoApi = {
       }
 
       const data = await response.json();
-      return data;
+      return data[0];
     } catch (error) {
       console.error("Error fetching data:", error);
+      throw error;
+    }
+  },
+
+  async searchCryptocurrencies(query: string): Promise<any> {
+    try {
+      const response = await fetch(`${BASE_URL}/search?query=${query}`);
+
+      if (!response.ok) {
+        throw new Error(`Error occured ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error searching cryptocurrencies:", error);
       throw error;
     }
   },
